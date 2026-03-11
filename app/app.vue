@@ -59,7 +59,7 @@ async function searchPlayer() {
     loadingMatches.value = false
 
     useHead({
-      title: '${gameName.value}'
+      title: `${gameName.value}`
     })
   }
 }
