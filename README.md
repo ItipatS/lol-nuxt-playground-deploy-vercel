@@ -4,7 +4,7 @@ An interactive **League of Legends profile explorer** built with **Nuxt 4, TypeS
 The app visualizes player match history and champion usage through an **interactive graph interface**, allowing users to explore gameplay patterns quickly.
 
 Live Demo:  
-https://YOUR-VERCEL-LINK
+https://lol-nuxt-playground-deploy-vercel.vercel.app/
 
 ---
 
