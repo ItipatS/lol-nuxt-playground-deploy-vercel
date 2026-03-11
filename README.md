@@ -1,75 +1,138 @@
-# Nuxt Minimal Starter
+# League Profile Graph
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+An interactive **League of Legends profile explorer** built with **Nuxt 4, TypeScript, and Tailwind CSS**.  
+The app visualizes player match history and champion usage through an **interactive graph interface**, allowing users to explore gameplay patterns quickly.
 
-## Setup
+Live Demo:  
+https://YOUR-VERCEL-LINK
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## Overview
 
-# pnpm
-pnpm install
+This project demonstrates how to build a **modern full-stack Nuxt application** with:
 
-# yarn
-yarn install
+- Serverless API routes
+- External REST API integration
+- Batched data fetching
+- Interactive data visualization
+- Responsive UI design
 
-# bun
-bun install
-```
+The application fetches player data from the **Riot Games API**, processes match history, and renders an interactive **champion graph** using **D3.js**.
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## Features
 
-```bash
-# npm
-npm run dev
+- Search League players by **Riot ID**
+- Fetch player profile and match history via **Riot API**
+- **Infinite scroll** match history loading
+- Expandable match details with full scoreboard
+- Interactive **champion graph visualization**
+- Champion usage statistics and winrate display
+- Responsive layout with sidebar navigation
+- Loading states and error handling
+- Secure API key management using **serverless functions**
 
-# pnpm
-pnpm dev
+---
 
-# yarn
-yarn dev
+## Tech Stack
 
-# bun
-bun run dev
-```
+Frontend
 
-## Production
+- **Nuxt 4 (Vue 3)**
+- **TypeScript**
+- **Tailwind CSS**
+- **D3.js** for graph visualization
 
-Build the application for production:
+Backend / Data
 
-```bash
-# npm
-npm run build
+- **Nuxt server API routes**
+- **Riot Games REST API**
+- JSON data processing
 
-# pnpm
-pnpm build
+Deployment
 
-# yarn
-yarn build
+- **Vercel**
+- Environment variables for secure API keys
 
-# bun
-bun run build
-```
+---
 
-Locally preview production build:
+## Architecture
 
-```bash
-# npm
-npm run preview
+The application uses a **hybrid frontend + serverless architecture**.
 
-# pnpm
-pnpm preview
+Client
 
-# yarn
-yarn preview
+- Vue reactive state manages UI and data flow
+- Components handle match history, graph rendering, and interactions
+- D3 force simulation renders champion relationship graph
 
-# bun
-bun run preview
-```
+Server (Nuxt API routes)
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Riot API requests are proxied through server routes
+- API keys remain hidden in environment variables
+- Endpoints normalize Riot API responses for frontend usage
+
+Data Flow
+
+---
+
+## Performance Considerations
+
+To keep the UI responsive when loading large match histories:
+
+- Matches are fetched **in batches**
+- **Infinite scroll** loads additional data only when needed
+- Match detail requests are processed concurrently
+- Failed requests are handled gracefully without breaking UI state
+
+---
+
+## Visualization
+
+Champion usage is visualized using a **force-directed graph** built with **D3.js**.
+
+Graph design:
+
+- Player is the center node
+- Each champion becomes a node
+- Node size represents **games played**
+- Edge thickness represents **usage frequency**
+- Node ring color represents **win rate**
+
+This allows users to quickly see:
+
+- most played champions
+- performance patterns
+- champion distribution
+
+---
+
+## What I Learned
+
+This project helped me explore:
+
+- Building full applications with **Nuxt 4**
+- Designing **data-driven interactive UI**
+- Integrating external APIs securely
+- Managing asynchronous UI state
+- Using **D3.js** for dynamic visualization
+
+---
+
+## Future Improvements
+
+Potential improvements include:
+
+- Champion filters and search
+- Role / lane analysis
+- Match timeline visualization
+- Player comparison view
+- WebSocket live game integration
+
+---
+
+## License
+
+MIT
